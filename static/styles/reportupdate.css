@@ -1,0 +1,162 @@
+
+body {
+    background-color: #ded751;
+    font-family: 'Mako';
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+::placeholder {
+    color: #E9C400;
+    opacity: 1;
+}
+
+/* Header Section */
+.reportupdate-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background: #FCFAF1;
+    box-shadow: 0px 4px 20px 20px #AA8F00;
+    border-radius: 0px 0px 80px 80px;
+}
+
+.reportupdate-header-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reportupdate-logo {
+    width: 200px;
+    height: 100px;
+}
+
+/* Report Button */
+.reportupdate-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reportupdate-button {
+    font-family: 'Mako', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #705E00;
+    width: 180px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #E9C400;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 32px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.reportupdate-button:hover {
+    background-color: #E9C400;
+    color: white;
+}
+
+/* Report Box */
+.reportupdate-report-box {
+    background: #ffffff;
+    height: 330px;
+    margin: 100px 50px 0px;
+    font-size: 20px;
+    font-family: 'Mako', sans-serif;
+    font-weight: 400;
+    overflow-y: scroll;
+    border-radius: 50px 0px 0px 50px;
+    padding: 25px;
+    box-shadow: 10px 10px 20px #AA8F00;
+    color: #705E00;
+}
+
+.reportupdate-report-list {
+    list-style-type: circle;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .reportupdate-header {
+        height: 130px;
+        border-radius: 0px 0px 60px 60px;
+    }
+
+    .reportupdate-logo {
+        width: 170px;
+        height: 90px;
+    }
+
+    .reportupdate-button {
+        font-size: 15px;
+        width: 170px;
+        height: 38px;
+    }
+
+    .reportupdate-report-box {
+        font-size: 18px;
+        margin: 80px 40px 0px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reportupdate-header {
+        height: 110px;
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .reportupdate-logo {
+        width: 140px;
+        height: 80px;
+    }
+
+    .reportupdate-button {
+        font-size: 14px;
+        width: 160px;
+        height: 35px;
+    }
+
+    .reportupdate-report-box {
+        font-size: 16px;
+        margin: 60px 30px 0px;
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reportupdate-header {
+        height: 90px;
+        border-radius: 0px 0px 30px 30px;
+    }
+
+    .reportupdate-header-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .reportupdate-logo {
+        width: 100px;
+        height: 70px;
+    }
+
+    .reportupdate-button {
+        font-size: 12px;
+        width: 140px;
+        height: 42px;
+    }
+
+    .reportupdate-report-box {
+        font-size: 14px;
+        margin: 50px 20px 0px;
+        height: 300px;
+        border-radius: 40px 40px 40px 40px;
+    }
+}

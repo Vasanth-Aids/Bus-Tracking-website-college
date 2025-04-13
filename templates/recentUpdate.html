@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bus Tracking System</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/reportupdate.css') }}" />
+  <script src="{{url_for('static', filename='scripts/map.js')}}"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mako&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body class="body">
+
+  <div class="reportupdate-header">
+    <div class="reportupdate-header-content">
+      <a href="\homepage">
+        <img class="reportupdate-logo" src="{{url_for('static', filename='assets/velammal_eng.png')}}" alt="Logo" />
+      </a>
+
+      <div class="reportupdate-button-container">
+        <a href="\report">
+          <button type="submit" class="reportupdate-button">
+            Report an Issue
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reportupdate-report-box">
+    <br>
+    <ul class="reportupdate-report-list">
+      {% for report in message %}
+      <li>{{ report }}</li> <br>
+      {% endfor %}
+    </ul>
+  </div>
+
+</body>
+
+</html>

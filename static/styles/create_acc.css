@@ -1,0 +1,234 @@
+body {
+    background-color: #ded751;
+    font-family: 'Mako';
+    transition: background-color 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+::placeholder {
+    color: #E9C400;
+    opacity: 1;
+}
+
+.signup-container {
+    display: grid;
+    margin: 0px;
+    height: 100vh;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.sign-up {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: #FCFAF1;
+    height: 100vh;
+    box-shadow: 0px 4px 20px 20px #AA8F00;
+    border-radius: 0px 80px 80px 0px;
+    padding-left: 20%;
+    padding-right: 20%;
+    animation: slideIn 0.6s ease-out;
+}
+
+.sign-up-logo {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 100vh;
+}
+
+.img-sign-up-logo {
+    padding-top: 25%;
+    padding-left: 25%;
+}
+
+.signup-heading {
+    display: block;
+    text-align: center;
+    font-family: "Pacifico";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 44px;
+    color: #AA8F00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.signup-heading {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    animation: fadeIn 1s ease-out;
+}
+
+.signup-input {
+    padding: 2.5% 0%;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-email-label,
+.signup-pswd-label,
+.signup-confpswd-label {
+    width: 86px;
+    height: 24px;
+    font-family: 'Mako';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #705E00;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    transition: color 0.3s ease;
+}
+
+#signin-email {
+    animation-delay: 0.2s;
+}
+
+#signin-email,
+#signin-pswd,
+#signup-email,
+#signup-pswd,
+#signup-confpswd {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 4px;
+    width: 100%;
+    height: 30px;
+    background: #F9ECAA;
+    border: 1px solid #E9C400;
+    border-radius: 4px;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+#signin-email:focus,
+#signin-pswd:focus,
+#signup-email:focus,
+#signup-pswd:focus,
+#signup-confpswd:focus {
+    border-color: #AA8F00;
+    box-shadow: 0 0 5px rgba(170, 143, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.account-type {
+    color: #705E00;
+}
+
+.signup-busroute-dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 5% 25%;
+    color: #705E00;
+    background: #F9F9F9;
+    border: 3px solid #E9C400;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-busroute-dropdown:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 10px rgba(170, 143, 0, 0.7);
+}
+
+.signup-button-div {
+    padding: 5% 40% 5% 35%;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.signup-button {
+    font-family: 'Mako';
+    height: 30px;
+    width: 100px;
+    background: #F3DE71;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: #705E00;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signup-button:hover {
+    background: #AA8F00;
+    color: white;
+    transform: scale(1.05);
+}
+
+.create-acc-error {
+    background-color: rgba(255, 150, 146, 0.804);
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.create-acc-success {
+    background-color: #7ceca9;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .sign-up {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .signup-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .sign-up {
+        width: 90%;
+        border-radius: 40px;
+        padding: 5%;
+    }
+
+    .signup-heading {
+        font-size: 3rem;
+    }
+
+    .img-sign-up-logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .signup-heading {
+        font-size: 2rem;
+    }
+
+    .signup-button-div {
+        padding: 5%;
+    }
+
+    .signup-button {
+        width: 80px;
+        font-size: 14px;
+    }
+
+    .signup-busroute-dropdown {
+        margin: 5% 10%;
+    }
+}

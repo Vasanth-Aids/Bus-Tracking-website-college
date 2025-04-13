@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Bus Tracking System</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/adminannounce.css') }}"
+    />
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mako&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="adminannounce-body">
+    <div class="adminannounce-header">
+      <div class="adminannounce-header-content">
+        <a href="/admin">
+          <img
+            class="adminannounce-logo"
+            src="{{ url_for('static', filename='assets/velammal_eng.png') }}"
+            alt=""
+          />
+        </a>
+        <a href="/admin">
+          <img
+            class="adminannounce-logo"
+            src="{{ url_for('static', filename='assets/ADMIN LOGO.png') }}"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="adminannounce-message-box">
+      <ul class="adminannounce-message-list">
+        {% for report in message %}
+        <li>{{ report }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="adminannounce-form-container">
+      <div>
+        <p class="adminannounce-title"><b>Post a public announcement</b></p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div class="adminannounce-alert adminannounce-error">{{ message }}</div>
+        {% endif %} {% if category == 'success' %}
+        <div class="adminannounce-alert adminannounce-success">
+          {{ message }}
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+        <form action="/adminann" method="post">
+          <div class="adminannounce-form-group">
+            <input
+              type="text"
+              class="adminannounce-input"
+              spellcheck="true"
+              placeholder="Type your announcement here"
+              name="message"
+            />
+            <button type="submit" class="adminannounce-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

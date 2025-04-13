@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bus Tracking System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mako&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/create_acc.css') }}" />
+  <script src="{{url_for('static', filename='scripts/map.js')}}"></script>
+</head>
+
+<body>
+
+  <div class="signup-container">
+
+    <div class="sign-up">
+
+      <div class="signup-heading">
+        <p>Create Account</p>
+      </div>
+
+      <!-- Alerts regarding entered creds in form  -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+
+      {% if category == 'error' %}
+      <div class="create-acc-error">
+        {{ message }}
+      </div>
+      {% endif %}
+
+      {% if category == 'success' %}
+      <div class="create-acc-success">
+        {{ message }}
+      </div>
+      {% endif%}
+
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      <form action="\signup" method="post">
+        <div class="signup-form">
+          <div class="signup-input">
+            <label class="signup-email-label" for="">Name</label><br />
+            <input type="text" id="signin-email" name="name" placeholder="Enter the Name" />
+          </div>
+
+          <div class="signup-input">
+            <label class="signup-email-label" for="">Email ID</label><br />
+            <input type="text" id="signin-email" name="email" placeholder="Enter Email ID" />
+          </div>
+
+          <div class="signup-input">
+            <label class="signup-pswd-label" for="">Password</label><br />
+            <input type="text" id="signup-pswd" name="pswd" placeholder="Enter password" />
+          </div>
+
+          <div class="signin-input">
+            <label class="signup-confpswd-label" for="">Confirm Password</label><br />
+            <input type="text" id="signup-confpswd" name="confpswd" placeholder="Re-enter password" />
+          </div>
+
+        </div>
+
+        <div class="account-type">
+          <p>Account Holder</p>
+          <input type="radio" name="account" value="passenger" checked />
+          <label for="student">Student/Professor</label><br />
+          <input type="radio" name="account" value="driver" />
+          <label for="driver">Driver</label><br />
+        </div>
+
+        <div class="signup-busroute-dropdown">
+          <label for="signup-busroute">Choose Route</label>
+          <select name="busroute" id="signup-busroute" class="account-type">
+            <option value="1">Route 1</option>
+            <option value="2">Route 2</option>
+            <option value="3">Route 3</option>
+            <option value="4">Route 4</option>
+          </select>
+        </div>
+
+        <div class="signup-button-div">
+          <button class="signup-button" type="submit">Create</button>
+        </div>
+
+      </form>
+
+
+    </div>
+
+    <div class="sign-up-logo">
+      <a href="\admin">
+        <img class="img-sign-up-logo" src="{{url_for('static', filename='assets/velammal_eng.png')}}" />
+      </a>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

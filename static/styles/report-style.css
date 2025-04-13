@@ -1,0 +1,186 @@
+/* General Styles */
+body {
+    background-color: #ded751;
+    font-family: 'Mako';
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+::placeholder {
+    color: #E9C400;
+    opacity: 1;
+}
+
+/* Header Section */
+.report-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background: #FCFAF1;
+    box-shadow: 0px 4px 20px 20px #AA8F00;
+    border-radius: 0px 0px 80px 80px;
+}
+
+.report-header-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.report-logo {
+    width: 160px;
+    height: 100px;
+}
+
+.report-notification {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.report-bell {
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+/* Form Container */
+.report-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.report-title {
+    font-family: 'Mako';
+    font-weight: 400;
+    font-size: 25px;
+    color: #705E00;
+    text-align: center;
+}
+
+/* Alerts */
+.report-alert {
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.report-error {
+    background-color: rgba(255, 150, 146, 0.804);
+}
+
+.report-success {
+    background-color: #7ceca9;
+}
+
+/* Form */
+.report-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.report-input {
+    height: 150px;
+    width: 550px;
+    font-family: 'Mako';
+    font-weight: 400;
+    font-size: 20px;
+    box-shadow: 2px 2px 15px #AA8F00;
+    border: 2px solid #E9C400;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.report-button {
+    font-family: 'Mako';
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: #705E00;
+    background-color: white;
+    border: 3px solid #E9C400;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 25px;
+    transition: 0.3s ease-in-out;
+}
+
+.report-button:hover {
+    background-color: #E9C400;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .report-header {
+        height: 120px;
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .report-header-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .report-logo {
+        width: 150px;
+        height: 80px;
+    }
+
+    .report-container {
+        margin-top: 80px;
+    }
+
+    .report-input {
+        width: 90%;
+        font-size: 18px;
+        height: 120px;
+    }
+
+    .report-button {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .report-header {
+        height: 100px;
+        border-radius: 0px 0px 30px 30px;
+    }
+
+    .report-header-content {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .report-logo {
+        width: 120px;
+        height: 70px;
+    }
+
+    .report-container {
+        margin-top: 60px;
+    }
+
+    .report-input {
+        width: 95%;
+        font-size: 16px;
+        height: 100px;
+    }
+
+    .report-button {
+        font-size: 16px;
+        padding: 6px 15px;
+    }
+}

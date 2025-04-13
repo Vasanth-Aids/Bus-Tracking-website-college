@@ -1,0 +1,148 @@
+body {
+    background-color: #ded751;
+    font-family: 'Mako';
+    transition: background-color 0.3s ease-in-out;
+
+}
+::placeholder {
+    color: #E9C400;
+    opacity: 1;
+}
+.adminissue-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background: #FCFAF1;
+    box-shadow: 0px 4px 20px 20px #AA8F00;
+    border-radius: 0px 0px 80px 80px;
+}
+
+.adminissue-header-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.adminissue-logo {
+    width: 200px;
+    height: 100px;
+}
+
+.adminissue-report-container {
+    background: #ffffff;
+    height: 330px;
+    margin: 100px 50px 0px 50px;
+    font-size: 20px;
+    font-family: 'Mako', sans-serif;
+    font-weight: 400;
+    overflow-y: scroll;
+    border-radius: 50px 0px 0px 50px;
+    padding: 25px;
+    box-shadow: 10px 10px 20px #AA8F00;
+    color: #705E00;
+}
+
+.adminissue-report-list {
+    list-style-type: circle;
+}
+/* Media Queries for Responsive Design */
+
+/* Tablets and smaller desktops (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .adminissue-header {
+        height: 120px;
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .adminissue-header-content {
+        display: flex;
+        flex-direction: row;
+        /* Ensures logos stay in a single row */
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        /* Ensures proper spacing on smaller screens */
+    }
+
+    .adminissue-logo {
+        width: 150px;
+        height: 80px;
+    }
+
+    .adminissue-report-container {
+        height: auto;
+        max-height: 280px;
+        margin: 80px 30px 0px 30px;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 40px 0px 0px 40px;
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .adminissue-header {
+        height: 100px;
+        border-radius: 0px 0px 40px 40px;
+    }
+
+    .adminissue-header-content {
+        flex-direction: row;
+        /* Keeps logos in a row */
+        justify-content: space-around;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+        /* Prevents stacking */
+    }
+
+    .adminissue-logo {
+        width: 130px;
+        height: 70px;
+    }
+
+    .adminissue-report-container {
+        height: auto;
+        max-height: 250px;
+        margin: 60px 20px 0px 20px;
+        font-size: 16px;
+        padding: 15px;
+        border-radius: 30px 0px 0px 30px;
+    }
+}
+
+/* Small mobile screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .adminissue-header {
+        height: auto;
+        padding: 20px 0;
+        border-radius: 0px 0px 30px 30px;
+    }
+
+    .adminissue-header-content {
+        flex-direction: row;
+        /* Ensures logos remain in a row */
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        /* Prevents logos from moving to the next line */
+    }
+
+    .adminissue-logo {
+        width:70px;
+        margin: 0px 20px;
+        height: 55px;
+    }
+
+    .adminissue-report-container {
+        height: auto;
+        max-height: 300px;
+        margin: 70px 10px 0px 10px;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 20px 0px 0px 20px;
+    }
+}

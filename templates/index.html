@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bus Tracking System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mako&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}" />
+  <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
+</head>
+
+<body class="sign-in-container">
+
+  <div class="sign-in-logo">
+    <img class="img-sign-in-logo" src="{{url_for('static', filename='assets/velammal_eng.png')}}" alt="bus-img" />
+  </div>
+
+  <div class="login">
+
+    <div class="login-heading">
+      <p>Login</p>
+    </div>
+
+    <!-- Message regarding entered creds in form  -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    {% if message == 'imail' %}
+    <div style="background-color: rgba(255, 150, 146, 0.804); text-align:center; padding:10px; border-radius:12px;">
+      Invalid login, please try again
+    </div>
+    {% endif %}
+
+    {% if message == 'ipass' %}
+    <div style="background-color: rgba(255, 150, 146, 0.804); text-align:center; padding:10px; border-radius:12px;">
+      Incorrect password, try again
+    </div>
+    {% endif%}
+
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class="sign-in-form">
+      <form action="\login" method="post">
+
+        <div class="signin-input">
+          <label class="signin-email-label" for="">Email ID</label><br />
+          <input type="text" id="signin-email" name="signin-email" placeholder="Enter your Email ID" />
+        </div>
+
+        <div class="signin-input">
+          <label class="signin-pswd-label" for="">Password</label><br />
+          <input type="text" id="signin-pswd" name="signin-pswd" placeholder="Enter your password" />
+        </div>
+
+        <a href="\" class="forgot-pswd" onclick="forgotpwd()">Forgot password?</a>
+
+        <div class="signin-button-div">
+          <button class="signin-button" type="submit">Sign In</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

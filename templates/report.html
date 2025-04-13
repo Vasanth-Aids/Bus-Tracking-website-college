@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bus Tracking System</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/report-style.css') }}" />
+  <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mako&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body class="report-body">
+
+  <div class="report-header">
+    <div class="report-header-content">
+      <a href="\homepage">
+        <img class="report-logo" src="{{url_for('static', filename='assets/velammal_eng.png')}}" alt="Logo" />
+      </a>
+      <div class="report-notification">
+        <a href="\updates">
+          <img class="report-bell" src="{{url_for('static', filename='assets/bell.png')}}" alt="Notification" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="report-container">
+    <div>
+      <p class="report-title"><b>Report your issue here</b></p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+
+      {% if category == 'error' %}
+      <div class="report-alert report-error">{{ message }}</div>
+      {% endif %}
+
+      {% if category == 'success' %}
+      <div class="report-alert report-success">{{ message }}</div>
+      {% endif%}
+
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      <br />
+      <form accept="\report" method="post" class="report-form">
+        <input type="text" class="report-input" spellcheck="true" placeholder="Type your grievances here" name="issue" />
+        <button type="submit" class="report-button">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

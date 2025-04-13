@@ -1,0 +1,328 @@
+body {
+    background-color: #ded751;
+    font-family: 'Mako';
+    transition: background-color 0.3s ease-in-out;
+     
+}
+::placeholder {
+    color: #E9C400;
+    opacity: 1;
+}
+
+.sign-in-container{
+     display: grid;
+     margin: 0px;
+     height: 100vh;
+     gap: 20px;
+}
+
+.sign-in-container {
+    perspective: 1000px;
+}
+.sign-in-logo {
+    margin-top: 12%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 100%;
+}
+.img-sign-in-logo {
+    padding-top: 20%;
+    padding-left: 25%;
+    
+}
+.img-sign-in-logo {
+    animation: float 3s ease-in-out infinite;
+    border-radius: 40px;
+}
+.login {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background: #FCFAF1;
+    height: 100%;
+    box-shadow: 0px 4px 20px 20px #AA8F00;
+    border-radius: 80px 0px 0px 80px;
+    padding-left: 20%;
+    padding-right: 20%;
+    animation: magicalEntrance 1.2s cubic-bezier(0.45, 0.05, 0.15, 0.95);
+    transform-origin: right center;
+}
+.login-heading{
+    display: block;
+    text-align: center;
+    font-family: "Pacifico";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 44px;
+    color: #AA8F00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.login-heading {
+    padding-top: 5%;
+    padding-bottom: 7.5%;
+    animation: neonPulse 2s infinite alternate;
+}
+.signin-input {
+    animation: floatIn 0.6s ease-out backwards;
+    
+}
+.signin-input{
+    padding: 2.5% 0%;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+.signin-email-label,
+.signin-pswd-label{
+    width: 86px;
+    height: 24px;
+    font-family: 'Mako';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #705E00;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    transition: color 0.3s ease;
+}
+.forgot-pswd {
+    color: #E9C400;
+    opacity: 1;
+    transition: color 0.3s ease;
+}
+.signin-button {
+    font-family: 'Mako';
+    height: 30px;
+    width: 100px;
+    background: #F3DE71;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: #705E00;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.signin-button-div{
+    padding: 5% 40% 5% 35%;
+    animation: fadeInUp 0.8s ease-out;
+}
+#signin-email {
+    animation-delay: 0.2s;
+}
+
+#signin-pswd {
+    animation-delay: 0.4s;
+}
+#signin-email:focus,
+#signin-pswd:focus{
+    border-color: #AA8F00;
+    box-shadow: 0 0 5px rgba(170, 143, 0, 0.7);
+    transform: scale(1.05);
+}
+.signin-button {
+    animation: buttonGlow 2s infinite alternate;
+    text-align: center;
+}
+.signin-button:hover {
+    background: #AA8F00;
+    color: white;
+    transform: scale(1.05);
+}
+#signin-email,
+#signin-pswd {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 4px;
+    width: 100%;
+    height: 30px;
+    background: #F9ECAA;
+    border: 1px solid #E9C400;
+    border-radius: 4px;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes magicalEntrance {
+    0% {
+        transform: rotateY(90deg) translateX(50%);
+        opacity: 0;
+    }
+
+    40% {
+        /* Slowed down the first phase */
+        transform: rotateY(-15deg) translateX(0);
+        opacity: 1;
+    }
+
+    70% {
+        /* Added an intermediate step for smoother rotation */
+        transform: rotateY(-5deg);
+    }
+
+    100% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+@keyframes neonPulse {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #E9C400, 0 0 20px #E9C400;
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #E9C400, 0 0 40px #E9C400;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes buttonGlow {
+    from {
+        box-shadow: 0 0 5px #F3DE71;
+    }
+
+    to {
+        box-shadow: 0 0 20px #F3DE71;
+    }
+}
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Mobile Devices (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .sign-in-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        height: 90vh !important;
+        justify-content: flex-end !important;
+        /* Pushes content down */
+    }
+
+    .sign-in-logo {
+        height: auto !important;
+        text-align: center !important;
+    }
+
+    .img-sign-in-logo {
+        padding: 0 !important;
+        max-width: 30% !important;
+    }
+
+    .login {
+        width: 65% !important;
+        border-radius: 40px !important;
+        padding: 10% !important;
+        box-shadow: 0px 4px 15px #AA8F00 !important;
+        margin-top: auto !important;
+        /* Pushes login form to bottom */
+        /* Adds space below */
+    }
+
+    .login-heading {
+        font-size: 3rem !important;
+    }
+
+    .signin-button-div {
+        padding: 10% 10% !important;
+        align-items: center !important;
+    }
+}
+
+/* Tablets & Small Laptops (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .sign-in-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 5% 0;
+    }
+
+    .sign-in-logo {
+        margin-top: 5%;
+        height: auto;
+        text-align: center;
+    }
+
+    .img-sign-in-logo {
+        padding: 0;
+        max-width: 60%;
+    }
+
+    .login {
+        width: 70%;
+        border-radius: 60px;
+        margin-top: 20%;
+        padding: 8%;
+        box-shadow: 0px 4px 18px #AA8F00;
+    }
+
+    .login-heading {
+        font-size: 3rem;
+    }
+
+    .signin-button-div {
+        padding: 5% 30%;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+/* Large Screens (1025px and above) */
+@media screen and (min-width: 1025px) {
+    .sign-in-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100vh;
+    }
+
+    .sign-in-logo {
+        margin-top: 10%;
+        height: 100%;
+    }
+
+    .img-sign-in-logo {
+        padding-top: 15%;
+        padding-left: 20%;
+    }
+
+    .login {
+        height: 100%;
+        padding-left: 15%;
+        padding-right: 15%;
+        border-radius: 80px 0px 0px 80px;
+    }
+
+    .login-heading {
+        font-size: 4rem;
+    }
+
+    .signin-button-div {
+        padding: 5% 35%;
+    }
+}

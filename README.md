@@ -8,10 +8,7 @@ This project was created using [Flask](https://flask.palletsprojects.com/en/2.2.
   </a>
   
   <hr />
-  
-  <a href="#">
-    <img src="https://user-images.githubusercontent.com/73932121/211652521-72316c86-7993-476b-9566-95b7eb497bcf.jpg" />
-  </a>
+ 
   
 </p>
 

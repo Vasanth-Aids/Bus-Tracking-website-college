@@ -31,15 +31,15 @@ These creds work only if mongoDB is installed in your PC.
 ```text
 Student User
 ---------------
-Username: user@ssn
+Username: user@vec
 Password: user
 ```
 
 ```text
 Bus Tracker Admin
 --------------
-Username: admin@ssn
-Password: admin
+Username: vasa@vec
+Password: vasa
 ```
 
 ## Missing Modules
